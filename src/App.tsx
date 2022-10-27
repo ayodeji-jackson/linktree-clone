@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div className='w-full py-16 px-4 flex flex-col my-0 mx-auto max-w-6xl'>
-      <button className='translate-y-2 grid place-items-center ml-auto w-10 h-10 rounded-full border-dashed border-2 border-gray-300' type="button">
+      <button className='translate-y-2 grid place-items-center ml-auto w-10 h-10 rounded-full border-dashed border-2 border-gray-300 transition-colors hover:bg-gray-50 focus:ring-gray-100 focus:ring-4 disabled:bg-gray-50' type="button">
         <img src={dots} />
       </button>
       <main className='grid justify-items-center'>
@@ -31,7 +31,7 @@ const App = () => {
         <div className='flex flex-col gap-6 w-full mb-6'>
           {
             links.map(link => (
-              <a href={link.to} key={link.text} className="bg-gray-200 text-center rounded-lg py-6 px-8 font-medium text-sm">{link.text}</a>
+              <a href={link.to} key={link.text} className="bg-gray-200 text-center rounded-lg py-6 px-8 font-medium text-sm transition-colors hover:bg-gray-300 focus:border-gray-400 focus:border focus:shadow-sm focus:shadow-[#1018280D] disabled:bg-gray-25 disabled:border-gray-100">{link.text}</a>
             ))
           }
         </div>
