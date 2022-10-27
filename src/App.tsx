@@ -20,7 +20,7 @@ const App = () => {
       to: "https://twitter.com/jax_emmanuel/",
       id: "twitter",
     },
-    { text: "Zuri Team", to: "https://training.zuri.team/", id: "btn_zuri" },
+    { text: "Zuri Team", to: "https://training.zuri.team/", id: "btn__zuri" },
     { text: "Zuri Books", to: "http://books.zuri.team/", id: "books" },
     {
       text: "Python Books",
