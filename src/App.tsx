@@ -66,6 +66,7 @@ const App = () => {
             <a
               href={link.to}
               key={link.id}
+              id={link.id}
               className="bg-gray-200 text-center rounded-lg py-6 px-8 font-medium text-sm transition-colors hover:bg-gray-300 focus:border-gray-400 focus:border focus:shadow-sm focus:shadow-[#1018280D] disabled:bg-gray-25 disabled:border-gray-100"
             >
               {link.text}
