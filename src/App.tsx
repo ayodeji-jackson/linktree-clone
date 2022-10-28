@@ -1,4 +1,4 @@
-import img from "./assets/profile__img.svg";
+import img from "./assets/me.jpg";
 import dots from "./assets/dots-horizontal.svg";
 import slack from "./assets/slack.svg";
 import github from "./assets/github.svg";
@@ -45,15 +45,15 @@ const App = () => {
         className="translate-y-2 grid place-items-center ml-auto xl:mr-60 w-10 h-10 rounded-full border-dashed border-2 border-gray-300 transition-colors hover:bg-gray-50 focus:ring-gray-100 focus:ring-4 disabled:bg-gray-50"
         type="button"
       >
-        <img src={dots} className="md:hidden" />
-        <img src={share} className="hidden md:block" />
+        <img src={dots} className="md:hidden" alt="options icon" />
+        <img src={share} className="hidden md:block" alt="share icon" />
       </button>
       <main className="grid justify-items-center">
         <div className="mb-6 relative cursor-pointer">
           <span className="opacity-0 hover:opacity-100 transition-opacity absolute bg-[rgba(52,64,84,0.75)] rounded-full inset-0">
             <img src={camera} className="absolute inset-x-9 inset-y-[70%]" />
           </span>
-          <img src={img} id="profile__img" />
+          <img src={img} id="profile__img" alt="jax's profile picture" className="h-[5.5rem] w-[5.5rem] rounded-full" />
         </div>
         <h1 className="font-bold text-lg text-grey-900 mb-8" id="twitter">
           jax_emmanuel
@@ -74,20 +74,20 @@ const App = () => {
           ))}
         </div>
         <div className="flex pt-6 pb-8 gap-6">
-          <img src={slack} />
+          <img src={slack} alt="slack logo" />
           <a></a>
-          <img src={github} />
+          <img src={github} alt="github logo" />
         </div>
       </main>
       <footer className="py-8">
         <hr />
 
         <div className="mt-9 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <img src={zuri} className="w-fit" />
+          <img src={zuri} className="w-fit" alt="zuri internship logo" />
           <p className="text-gray-500 text-sm">
             HNG Internship 9 Frontend Task
           </p>
-          <img src={i4g} className="w-fit" />
+          <img src={i4g} className="w-fit" alt="i4g logo" />
         </div>
       </footer>
     </div>
