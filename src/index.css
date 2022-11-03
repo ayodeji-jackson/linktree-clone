@@ -50,3 +50,15 @@ button {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .link {
+    @apply bg-gray-200 text-center rounded-lg py-6 px-8 font-medium text-sm transition-colors hover:bg-gray-300 focus:border-gray-400 focus:border focus:shadow-sm focus:shadow-[#1018280D] disabled:bg-gray-25 disabled:border-gray-100;
+  }
+  form label {
+    @apply text-gray-700 font-medium
+  }
+  form label > :first-child:not(input[type="checkbox"]) {
+    @apply block font-normal mt-[6px] rounded-lg border border-gray-300 py-[10px] px-[14px] w-full
+  }
+}

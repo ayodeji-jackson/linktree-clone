@@ -1,20 +1,13 @@
-import img from "./assets/me.jpg";
-import dots from "./assets/dots-horizontal.svg";
-import slack from "./assets/slack.svg";
-import github from "./assets/github.svg";
-import zuri from "./assets/Zuri.Internship_Logo.svg";
-import i4g from "./assets/I4G.svg";
-import camera from "./assets/camera.svg";
-import share from "./assets/share.svg";
+import img from "../assets/me.jpg";
+import dots from "../assets/dots-horizontal.svg";
+import slack from "../assets/slack.svg";
+import github from "../assets/github.svg";
+import camera from "../assets/camera.svg";
+import share from "../assets/share.svg";
+import { Link } from "react-router-dom";
 
-interface Link {
-  id: string;
-  text: string;
-  to: string;
-}
-
-const App = () => {
-  const links: Link[] = [
+export function Home() {
+  const links = [
     {
       text: "Twitter Link",
       to: "https://twitter.com/jax_emmanuel/",
@@ -40,7 +33,7 @@ const App = () => {
   ];
 
   return (
-    <div className="w-full py-16 px-4 flex flex-col my-0 mx-auto max-w-6xl">
+    <>
       <button
         className="translate-y-2 grid place-items-center ml-auto xl:mr-60 w-10 h-10 rounded-full border-dashed border-2 border-gray-300 transition-colors hover:bg-gray-50 focus:ring-gray-100 focus:ring-4 disabled:bg-gray-50"
         type="button"
@@ -62,16 +55,17 @@ const App = () => {
           jax
         </span>
         <div className="flex flex-col gap-6 w-full mb-6">
-          {links.map((link) => (
+          {links.map(({ id, to, text }) => (
             <a
-              href={link.to}
-              key={link.id}
-              id={link.id}
-              className="bg-gray-200 text-center rounded-lg py-6 px-8 font-medium text-sm transition-colors hover:bg-gray-300 focus:border-gray-400 focus:border focus:shadow-sm focus:shadow-[#1018280D] disabled:bg-gray-25 disabled:border-gray-100"
+              href={to}
+              id={id}
+              key={id}
+              className="link"
             >
-              {link.text}
+              {text}
             </a>
           ))}
+          <Link to="/contact" className="link">Contact</Link>
         </div>
         <div className="flex pt-6 pb-8 gap-6">
           <img src={slack} alt="slack logo" />
@@ -79,19 +73,6 @@ const App = () => {
           <img src={github} alt="github logo" />
         </div>
       </main>
-      <footer className="py-8">
-        <hr />
-
-        <div className="mt-9 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <img src={zuri} className="w-fit" alt="zuri internship logo" />
-          <p className="text-gray-500 text-sm">
-            HNG Internship 9 Frontend Task
-          </p>
-          <img src={i4g} className="w-fit" alt="i4g logo" />
-        </div>
-      </footer>
-    </div>
+    </>
   );
-};
-
-export default App;
+}
