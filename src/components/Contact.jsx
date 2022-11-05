@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export function Contact() {
+  const [ hasConsent, setHasConsent ] = useState(true);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -54,8 +58,9 @@ export function Contact() {
           <label className="text-gray-600 flex items-start gap-3">
             <input
               type="checkbox"
-              className="w-[20px] h-[20px] rounded-md text-white"
               required
+              checked={hasConsent} 
+              onChange={() => setHasConsent(!hasConsent)}
             />
             <span>
               You agree to providing your data to Ayodeji Oyeleye who may
@@ -63,8 +68,8 @@ export function Contact() {
             </span>
           </label>
           <button
-            className="bg-[#1570EF] hover:bg-[#175CD3] disabled:bg-[#B2DDFF] focus:border-[#1570EF] text-white py-3 px-[20px]"
-            id="btn__submit"
+            className="bg-[#1570EF] font-semibold hover:bg-[#175CD3] disabled:bg-[#B2DDFF] focus:border-[#1570EF] text-white py-3 px-[20px]"
+            id="btn__submit" disabled={!hasConsent}
           >
             Send message
           </button>
