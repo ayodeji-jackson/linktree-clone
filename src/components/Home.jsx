@@ -46,7 +46,12 @@ export function Home() {
           <span className="opacity-0 hover:opacity-100 transition-opacity absolute bg-[rgba(52,64,84,0.75)] rounded-full inset-0">
             <img src={camera} className="absolute inset-x-9 inset-y-[70%]" />
           </span>
-          <img src={img} id="profile__img" alt="jax's profile picture" className="h-[5.5rem] w-[5.5rem] rounded-full" />
+          <img
+            src={img}
+            id="profile__img"
+            alt="jax's profile picture"
+            className="h-[5.5rem] w-[5.5rem] rounded-full"
+          />
         </div>
         <h1 className="font-bold text-lg text-grey-900 mb-8" id="twitter">
           jax_emmanuel
@@ -56,16 +61,13 @@ export function Home() {
         </span>
         <div className="flex flex-col gap-6 w-full mb-6">
           {links.map(({ id, to, text }) => (
-            <a
-              href={to}
-              id={id}
-              key={id}
-              className="link"
-            >
+            <a href={to} id={id} key={id} className="link">
               {text}
             </a>
           ))}
-          <Link to="/contact" id="contact" className="link">Contact</Link>
+          <Link to="/contact" id="contact" className="link">
+            Contact Me
+          </Link>
         </div>
         <div className="flex pt-6 pb-8 gap-6">
           <img src={slack} alt="slack logo" />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -58,10 +58,11 @@ button {
   form label {
     @apply text-gray-700 font-medium;
   }
-  form label > :first-child, form button {
-    @apply focus:[box-shadow:0px_1px_2px_rgba(16,_24,_40,_0.05),_0px_0px_0px_4px_#D1E9FF];
+  form label > :first-child,
+  form button {
+    @apply [box-shadow:0px_1px_2px_rgba(16,_24,_40,_0.05)] valid:focus:[box-shadow:0px_1px_2px_rgba(16,_24,_40,_0.05),_0px_0px_0px_4px_#D1E9FF];
   }
   form label > :first-child:not(input[type="checkbox"]) {
-    @apply block font-normal mt-[6px] rounded-lg border border-gray-300 py-[10px] px-[14px] w-full;
+    @apply block font-normal mt-[6px] rounded-lg border border-gray-300 py-[10px] px-[14px] w-full valid:border-[#84CAFF] invalid:border-[#F89687] focus:invalid:[box-shadow:0px_1px_2px_rgba(16,_24,_40,_0.05),_0px_0px_0px_4px_#FFD3CC];
   }
 }
