@@ -5,6 +5,18 @@ export function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formControls = e.target.querySelectorAll('input:not([type="checkbox"]), textarea');
+    // if (formControls.every(input => input.validity.valid)) {
+    //   alert('Message sent');
+    //   return;
+    // }
+    for (let input of formControls) {
+      input.addEventListener('focus', e => {
+        e.target.nextElementSibling.classList.add('hidden');
+      });
+      if (!input.validity.valid) input.nextElementSibling.classList.remove('hidden');
+      else input.nextElementSibling.classList.add('hidden');
+    }
   };
 
   return (
@@ -16,7 +28,7 @@ export function Contact() {
         <p className="text-gray-600 text-lg mb-12">
           Hi there, contact me to ask me about anything you have in mind.
         </p>
-        <form className="flex flex-col gap-6 mb-16" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-6 mb-16" onSubmit={handleSubmit} noValidate>
           <div className="flex flex-col gap-6 sm:flex-row w-full">
             <label className="flex-1">
               First name
@@ -26,6 +38,7 @@ export function Contact() {
                 placeholder="Enter your first name"
                 id="first_name"
               />
+              <div className="text-[#F83F23] mt-[6px] hidden">Please enter a first name</div>
             </label>
             <label className="flex-1">
               Last name
@@ -35,6 +48,7 @@ export function Contact() {
                 placeholder="Enter your last name"
                 id="last_name"
               />
+              <div className="text-[#F83F23] mt-[6px] hidden">Please enter a last name</div>
             </label>
           </div>
           <label>
@@ -45,6 +59,7 @@ export function Contact() {
               placeholder="yourname@email.com"
               id="email"
             />
+            <div className="text-[#F83F23] mt-[6px] hidden">Invalid email</div>
           </label>
           <label>
             Message
@@ -54,6 +69,7 @@ export function Contact() {
               className="resize-none h-[132px]"
               placeholder="Send me a message and I'll reply you as soon as possible... "
             ></textarea>
+            <div className="text-[#F83F23] mt-[6px] hidden">Please enter a message</div>
           </label>
           <label className="text-gray-600 flex items-start gap-3">
             <input
