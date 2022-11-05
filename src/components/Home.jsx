@@ -65,7 +65,7 @@ export function Home() {
               {text}
             </a>
           ))}
-          <Link to="/contact" className="link">Contact</Link>
+          <Link to="/contact" id="contact" className="link">Contact</Link>
         </div>
         <div className="flex pt-6 pb-8 gap-6">
           <img src={slack} alt="slack logo" />

@@ -11,29 +11,29 @@ export function Contact() {
         <div className="flex flex-col gap-6">
           <label>
             First name
-            <input type="text" placeholder="Enter your first name" />
+            <input type="text" placeholder="Enter your first name" id="first_name" />
           </label>
           <label>
-            Last name <input type="text" placeholder="Enter your last name" />
+            Last name <input type="text" placeholder="Enter your last name" id="last_name" />
           </label>
         </div>
         <label>
-          Email <input type="email" placeholder="yourname@email.com" />
+          Email <input type="email" placeholder="yourname@email.com" id="email" />
         </label>
         <label>
           Message
-          <textarea
+          <textarea id="message"
             className="resize-none h-[132px]"
             placeholder="Send me a message and I'll reply you as soon as possible... "
           ></textarea>
         </label>
         <label className="text-gray-600 flex items-start gap-3">
-          <input type="checkbox" />{" "}
+          <input type="checkbox" className="w-[20px] h-[20px] rounded-md" />
           <span>
             You agree to providing your data to Jax who may contact you.
           </span>
         </label>
-        <button className="bg-[#1570EF] text-white py-3 px-[20px]">
+        <button className="bg-[#1570EF] hover:bg-[#175CD3] disabled:bg-[#B2DDFF] focus:border-[#1570EF] text-white py-3 px-[20px]" id="btn__submit">
           Send message
         </button>
       </form>

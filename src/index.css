@@ -56,9 +56,12 @@ button {
     @apply bg-gray-200 text-center rounded-lg py-6 px-8 font-medium text-sm transition-colors hover:bg-gray-300 focus:border-gray-400 focus:border focus:shadow-sm focus:shadow-[#1018280D] disabled:bg-gray-25 disabled:border-gray-100;
   }
   form label {
-    @apply text-gray-700 font-medium
+    @apply text-gray-700 font-medium;
+  }
+  form label > :first-child, form button {
+    @apply focus:[box-shadow:0px_1px_2px_rgba(16,_24,_40,_0.05),_0px_0px_0px_4px_#D1E9FF];
   }
   form label > :first-child:not(input[type="checkbox"]) {
-    @apply block font-normal mt-[6px] rounded-lg border border-gray-300 py-[10px] px-[14px] w-full
+    @apply block font-normal mt-[6px] rounded-lg border border-gray-300 py-[10px] px-[14px] w-full;
   }
 }
